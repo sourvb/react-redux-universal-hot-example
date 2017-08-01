@@ -7,7 +7,7 @@
 ---
 
 ## About
-
+###### This is a fork of [@erikras project](https://github.com/erikras/react-redux-universal-hot-example). The project is forked mainly for updating packages and removing unused and some extra packages like all the bootstrap goodies, redux-form, devtools monitors etc. Widget and Survey components are removed in the process.
 This is a starter boilerplate app I've put together using the following technologies:
 
 * ~~Isomorphic~~ [Universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9) rendering
@@ -23,16 +23,16 @@ This is a starter boilerplate app I've put together using the following technolo
 * [Redux Dev Tools](https://github.com/gaearon/redux-devtools) for next generation DX (developer experience). Watch [Dan Abramov's talk](https://www.youtube.com/watch?v=xsSnOQynTHs).
 * [React Router Redux](https://github.com/reactjs/react-router-redux) Redux/React Router bindings.
 * [ESLint](http://eslint.org) to maintain a consistent code style
-* [redux-form](https://github.com/erikras/redux-form) to manage form state in Redux
-* [lru-memoize](https://github.com/erikras/lru-memoize) to speed up form validation
+* ~~[redux-form](https://github.com/erikras/redux-form) to manage form state in Redux~~
+* ~~[lru-memoize](https://github.com/erikras/lru-memoize) to speed up form validation~~
 * [multireducer](https://github.com/erikras/multireducer) to combine single reducers into one key-based reducer
 * [style-loader](https://github.com/webpack/style-loader), [sass-loader](https://github.com/jtangelder/sass-loader) and [less-loader](https://github.com/webpack/less-loader) to allow import of stylesheets in plain css, sass and less,
-* [bootstrap-sass-loader](https://github.com/shakacode/bootstrap-sass-loader) and [font-awesome-webpack](https://github.com/gowravshekar/font-awesome-webpack) to customize Bootstrap and FontAwesome
+* ~~[bootstrap-sass-loader](https://github.com/shakacode/bootstrap-sass-loader) and [font-awesome-webpack](https://github.com/gowravshekar/font-awesome-webpack) to customize Bootstrap and FontAwesome~~
 * [react-helmet](https://github.com/nfl/react-helmet) to manage title and meta tag information on both server and client
 * [webpack-isomorphic-tools](https://github.com/halt-hammerzeit/webpack-isomorphic-tools) to allow require() work for statics both on client and server
 * [mocha](https://mochajs.org/) to allow writing unit tests for the project.
 
-I cobbled this together from a wide variety of similar "starter" repositories. As I post this in June 2015, all of these libraries are right at the bleeding edge of web development. They may fall out of fashion as quickly as they have come into it, but I personally believe that this stack is the future of web development and will survive for several years. I'm building my new projects like this, and I recommend that you do, too.
+I cobbled this together from a wide variety of similar "starter" repositories. As I post this in ~~June 2015~~ Aug 2017, all of these libraries are ~~right~~ not exactly at the bleeding edge of web development. They may fall out of fashion as quickly as they have come into it, but I personally believe that this stack is the future of web development and will survive for several years. I'm building my new projects like this, and I recommend that you do, too.
 
 ## Installation
 
@@ -52,9 +52,9 @@ The first time it may take a little while to generate the first `webpack-assets.
 
 [Redux Devtools](https://github.com/gaearon/redux-devtools) are enabled by default in development.
 
-- <kbd>CTRL</kbd>+<kbd>H</kbd> Toggle DevTools Dock
-- <kbd>CTRL</kbd>+<kbd>Q</kbd> Move DevTools Dock Position
-- see [redux-devtools-dock-monitor](https://github.com/gaearon/redux-devtools-dock-monitor) for more detailed information.
+- ~~<kbd>CTRL</kbd>+<kbd>H</kbd> Toggle DevTools Dock~~
+- ~~<kbd>CTRL</kbd>+<kbd>Q</kbd> Move DevTools Dock Position~~
+- ~~see [redux-devtools-dock-monitor](https://github.com/gaearon/redux-devtools-dock-monitor) for more detailed information.~~
 
 If you have the 
 [Redux DevTools chrome extension](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd) installed it will automatically be used on the client-side instead.
@@ -69,9 +69,9 @@ npm run build
 npm run start
 ```
 
-## Demo
+## ~~Demo~~
 
-A demonstration of this app can be seen [running on heroku](https://react-redux.herokuapp.com), which is a deployment of the [heroku branch](https://github.com/erikras/react-redux-universal-hot-example/tree/heroku).
+~~A demonstration of this app can be seen [running on heroku](https://react-redux.herokuapp.com), which is a deployment of the [heroku branch](https://github.com/erikras/react-redux-universal-hot-example/tree/heroku).~~
 
 ## Documentation
 
@@ -103,7 +103,7 @@ We also spit out the `redux` state into a global `window.__data` variable in the
 
 #### Server-side Data Fetching
 
-The [redux-async-connect](https://www.npmjs.com/package/redux-async-connect) package exposes an API to return promises that need to be fulfilled before a route is rendered. It exposes a `<ReduxAsyncConnect />` container, which wraps our render tree on both [server](https://github.com/erikras/react-redux-universal-hot-example/blob/master/src/server.js) and [client](https://github.com/erikras/react-redux-universal-hot-example/blob/master/src/client.js). More documentation is available on the [redux-async-connect](https://www.npmjs.com/package/redux-async-connect) page.
+The ~~[redux-async-connect](https://www.npmjs.com/package/redux-async-connect)~~ [redux-connect](https://www.npmjs.com/package/redux-connect) package exposes an API to return promises that need to be fulfilled before a route is rendered. It exposes a `<ReduxAsyncConnect />` container, which wraps our render tree on both [server](https://github.com/erikras/react-redux-universal-hot-example/blob/master/src/server.js) and [client](https://github.com/erikras/react-redux-universal-hot-example/blob/master/src/client.js). More documentation is available on the ~~[redux-async-connect](https://www.npmjs.com/package/redux-async-connect)~~ [redux-connect](https://www.npmjs.com/package/redux-connect) page.
 
 #### Client Side
 
@@ -234,7 +234,7 @@ The first deploy might take a while, but after that your `node_modules` dir shou
 
 ## FAQ
 
-This project moves fast and has an active community, so if you have a question that is not answered below please visit our [Discord channel](https://discord.gg/0ZcbPKXt5bZZb1Ko) or file an issue.
+This project moves fast and has an active community, so if you have a question that is not answered below please ~~visit our [Discord channel](https://discord.gg/0ZcbPKXt5bZZb1Ko) or~~ file an issue.
 
 
 ## Roadmap 
@@ -252,4 +252,4 @@ If you would like to submit a pull request, please make an effort to follow the 
 ---
 Thanks for checking this out.
 
-– Erik Rasmussen, [@erikras](https://twitter.com/erikras)
+– ~~Erik Rasmussen, [@erikras](https://twitter.com/erikras)~~

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import { CounterButton, GithubButton } from 'components';
+import { GithubButton } from 'components';
 import config from '../../config';
 import Helmet from 'react-helmet';
 
@@ -50,9 +50,6 @@ export default class Home extends Component {
 
         <div className="container">
           <div className={styles.counterContainer}>
-            <CounterButton multireducerKey="counter1"/>
-            <CounterButton multireducerKey="counter2"/>
-            <CounterButton multireducerKey="counter3"/>
           </div>
 
           <p>This starter boilerplate app uses the following technologies:</p>
@@ -113,14 +110,14 @@ export default class Home extends Component {
             </dd>
             <dt>Server-side data loading</dt>
             <dd>
-              The <Link to="/widgets">Widgets page</Link> demonstrates how to fetch data asynchronously from
+              The /widgets Widgets page demonstrates how to fetch data asynchronously from
               some source that is needed to complete the server-side rendering. <code>Widgets.js</code>'s
               <code>asyncConnect()</code> function is called before the widgets page is loaded, on either the server
               or the client, allowing all the widget data to be loaded and ready for the page to render.
             </dd>
             <dt>Data loading errors</dt>
             <dd>
-              The <Link to="/widgets">Widgets page</Link> also demonstrates how to deal with data loading
+              The /widgets Widgets page also demonstrates how to deal with data loading
               errors in Redux. The API endpoint that delivers the widget data intentionally fails 33% of
               the time to highlight this. The <code>clientMiddleware</code> sends an error action which
               the <code>widgets</code> reducer picks up and saves to the Redux state for presenting to the user.
@@ -146,7 +143,7 @@ export default class Home extends Component {
             </dd>
             <dt>Forms</dt>
             <dd>
-              The <Link to="/survey">Survey page</Link> uses the
+              The /survey uses the
               still-experimental <a href="https://github.com/erikras/redux-form" target="_blank">redux-form</a> to
               manage form state inside the Redux store. This includes immediate client-side validation.
             </dd>

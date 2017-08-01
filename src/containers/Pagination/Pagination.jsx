@@ -2,7 +2,6 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { List } from 'immutable';
 import { connect } from 'react-redux';
-import { VioletDataTable, VioletPaginator } from 'violet-paginator';
 
 import './violet.min.scss';
 import './Pagination.scss';
@@ -65,21 +64,7 @@ function mockFetch({ query: { pageSize, page, sort, sortOrder } }) {
   });
 }
 
-export function Pagination({ fetch }) {
-  const headers = [{
-    field: 'name',
-    text: 'Name'
-  }, {
-    field: 'rank',
-    text: 'Rank'
-  }];
-
-  const config = {
-    fetch,
-    listId: 'recipes',
-    pageSize: 3
-  };
-
+export function Pagination() {
   return (
     <section style={{ width: '50%' }}>
       <h1>Pagination</h1>
@@ -89,11 +74,6 @@ export function Pagination({ fetch }) {
         This is an example of a datatable in redux with sorting and pagination capability
         provided by <a href="https://www.npmjs.com/package/violet-paginator" target="_blank">violet-paginator</a>.
       </p>
-      <VioletPaginator {...config} />
-      <VioletDataTable
-        {...config}
-        headers={headers}
-      />
     </section>
   );
 }

@@ -4,8 +4,7 @@ import {connect} from 'react-redux';
 import * as widgetActions from 'redux/modules/widgets';
 import {isLoaded, load as loadWidgets} from 'redux/modules/widgets';
 import {initializeWithKey} from 'redux-form';
-import { WidgetForm } from 'components';
-import { asyncConnect } from 'redux-async-connect';
+import { asyncConnect } from 'redux-connect';
 
 @asyncConnect([{
   deferred: true,
@@ -39,7 +38,7 @@ export default class Widgets extends Component {
       const {editStart} = this.props; // eslint-disable-line no-shadow
       return () => editStart(String(widget.id));
     };
-    const {widgets, error, editing, loading, load} = this.props;
+    const {widgets, error, loading, load} = this.props;
     let refreshClassName = 'fa fa-refresh';
     if (loading) {
       refreshClassName += ' fa-spin';
@@ -82,9 +81,8 @@ export default class Widgets extends Component {
           </tr>
           </thead>
           <tbody>
-          {
-            widgets.map((widget) => editing[widget.id] ?
-              <WidgetForm formKey={String(widget.id)} key={String(widget.id)} initialValues={widget}/> :
+          
+              
               <tr key={widget.id}>
                 <td className={styles.idCol}>{widget.id}</td>
                 <td className={styles.colorCol}>{widget.color}</td>
@@ -95,8 +93,8 @@ export default class Widgets extends Component {
                     <i className="fa fa-pencil"/> Edit
                   </button>
                 </td>
-              </tr>)
-          }
+              </tr>
+          
           </tbody>
         </table>}
       </div>

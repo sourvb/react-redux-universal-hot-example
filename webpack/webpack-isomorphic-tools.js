@@ -51,7 +51,7 @@ module.exports = {
         function is_bootstrap_style(name) {
           return name.indexOf('./src/theme/bootstrap.config.js') >= 0;
         }
-        if (options.development) {
+        if (process.env.NODE_ENV !== 'production') {
           return is_bootstrap_style(module.name) && WebpackIsomorphicToolsPlugin.style_loader_filter(module, regex, options, log);
         }
         // no need for it in production mode
@@ -64,7 +64,7 @@ module.exports = {
     style_modules: {
       extensions: ['less','scss'],
       filter: function(module, regex, options, log) {
-        if (options.development) {
+        if (process.env.NODE_ENV !== 'production') {
           // in development mode there's webpack "style-loader",
           // so the module.name is not equal to module.name
           return WebpackIsomorphicToolsPlugin.style_loader_filter(module, regex, options, log);
@@ -75,7 +75,7 @@ module.exports = {
         }
       },
       path: function(module, options, log) {
-        if (options.development) {
+        if (process.env.NODE_ENV !== 'production') {
           // in development mode there's webpack "style-loader",
           // so the module.name is not equal to module.name
           return WebpackIsomorphicToolsPlugin.style_loader_path_extractor(module, options, log);
@@ -86,7 +86,7 @@ module.exports = {
         }
       },
       parser: function(module, options, log) {
-        if (options.development) {
+        if (process.env.NODE_ENV !== 'production') {
           return WebpackIsomorphicToolsPlugin.css_modules_loader_parser(module, options, log);
         } else {
           // in production mode there's Extract Text Loader which extracts CSS text away

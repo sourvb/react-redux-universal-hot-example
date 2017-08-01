@@ -19,8 +19,8 @@ module.exports = {
   context: path.resolve(__dirname, '..'),
   entry: {
     'main': [
-      'bootstrap-sass!./src/theme/bootstrap.config.prod.js',
-      'font-awesome-webpack!./src/theme/font-awesome.config.prod.js',
+      //'bootstrap-sass!./src/theme/bootstrap.config.prod.js',
+      //'font-awesome-webpack!./src/theme/font-awesome.config.prod.js',
       './src/client.js'
     ]
   },
@@ -59,7 +59,7 @@ module.exports = {
     new ExtractTextPlugin('[name]-[chunkhash].css', {allChunks: true}),
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: '"production"'
+        NODE_ENV: JSON.stringify('production')
       },
 
       __CLIENT__: true,

@@ -1,8 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {reduxForm} from 'redux-form';
-import widgetValidation, {colors} from './widgetValidation';
+import {colors} from './widgetValidation';
 import * as widgetActions from 'redux/modules/widgets';
 
 @connect(
@@ -11,11 +10,6 @@ import * as widgetActions from 'redux/modules/widgets';
   }),
   dispatch => bindActionCreators(widgetActions, dispatch)
 )
-@reduxForm({
-  form: 'widget',
-  fields: ['id', 'color', 'sprocketCount', 'owner'],
-  validate: widgetValidation
-})
 export default class WidgetForm extends Component {
   static propTypes = {
     fields: PropTypes.object.isRequired,

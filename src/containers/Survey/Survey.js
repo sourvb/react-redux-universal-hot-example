@@ -2,7 +2,6 @@ import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import Helmet from 'react-helmet';
 import {initialize} from 'redux-form';
-import {SurveyForm} from 'components';
 
 @connect(
   () => ({}),
@@ -67,8 +66,6 @@ export default class Survey extends Component {
 
         <p>The circles to the left of the inputs correspond to flags provided by <code>redux-form</code>:
           Touched, Visited, Active, and Dirty.</p>
-
-        <SurveyForm onSubmit={this.handleSubmit}/>
       </div>
     );
   }
